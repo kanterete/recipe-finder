@@ -2,10 +2,12 @@ Tech Stack:
 Vite Recipe Finder Website
 
 Tech Stack:
-Vite
-Tailwind CSS
-TypeScript
-MUI
+<ul>
+  <li>Vite</li>
+  <li>Tailwind CSS</li>
+  <li>TypeScript</li>
+  <li>MUI</li>
+</ul>
 
 # React + TypeScript + Vite
 
