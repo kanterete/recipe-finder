@@ -1,4 +1,3 @@
-Tech Stack:
 Vite Recipe Finder Website
 
 Tech Stack:
