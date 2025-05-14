@@ -1,3 +1,12 @@
+Tech Stack:
+Vite Recipe Finder Website
+
+Tech Stack:
+Vite
+Tailwind CSS
+TypeScript
+MUI
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
