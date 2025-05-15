@@ -4,13 +4,15 @@ import MenuBookIcon from "@mui/icons-material/MenuBook"
 
 const SearchBar = () => {
     return (
-        <div className="flex max-w-[1440px] flex-col items-center justify-center gap-10 p-4">
-            <h1 className="text-4xl font-bold">Search for recipes...</h1>
+        <div className="flex max-w-[1240px] flex-col items-center justify-center gap-10 p-4">
+            <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+                Search for recipes...
+            </h1>
             <TextField
                 id="outlined-basic"
                 variant="outlined"
                 label="Recipe..."
-                className="w-84"
+                className="w-64"
             />
             <Button
                 variant="contained"
