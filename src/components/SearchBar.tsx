@@ -4,7 +4,10 @@ import MenuBookIcon from "@mui/icons-material/MenuBook"
 
 const SearchBar = () => {
     return (
-        <div className="flex max-w-[1240px] flex-col items-center justify-center gap-10 p-4">
+        <div
+            id="SearchRecipes"
+            className="mx-auto mt-12 flex max-w-[1240px] flex-col items-center justify-center gap-10 p-4"
+        >
             <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
                 Search for recipes...
             </h1>

@@ -18,9 +18,11 @@ const NavBar = () => {
             />
 
             <ul className="hidden md:flex">
-                <li className="cursor-pointer p-4">Home</li>
+                <li className="cursor-pointer p-4">
+                    <a href="#">Home</a>
+                </li>
                 <li className="cursor-pointer p-4 whitespace-nowrap">
-                    Search Recipes
+                    <a href="#SearchRecipes">Search Recipes</a>
                 </li>
                 <li className="cursor-pointer p-4">Favorites</li>
                 <li className="cursor-pointer p-4">Contact</li>
