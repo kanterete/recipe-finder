@@ -4,30 +4,30 @@ import StarIcon from "@mui/icons-material/Star"
 import SpeedIcon from "@mui/icons-material/Speed"
 import { Meals } from "../types/Meals"
 
-interface CardProps {
-    meals: Meals
+type CardProps = {
+    meal: Meals
 }
 
-const Card = ({ meals }: CardProps) => {
+const Card = ({ meal }: CardProps) => {
     return (
         <div className="flex h-full w-74 flex-col justify-center rounded-2xl text-center md:w-84">
             <img
-                src={meals.image}
+                src={meal.image}
                 alt={"chicken salad"}
                 className="rounded-t-xl object-cover"
             />
-            <h1 className="my-3 text-xl font-bold">{meals.name}</h1>
+            <h1 className="my-3 text-xl font-bold">{meal.name}</h1>
             <p className="text-gray-500">
-                <SpeedIcon /> Difficulty: {meals.difficulty}
+                <SpeedIcon /> Difficulty: {meal.difficulty}
             </p>
             <p className="text-gray-500">
-                <RestaurantIcon /> Servings: {meals.servings}
+                <RestaurantIcon /> Servings: {meal.servings}
             </p>
             <p className="mb-4 text-gray-500">
-                <StarIcon /> Rating: {meals.rating}
+                <StarIcon /> Rating: {meal.rating}
             </p>
             <p className="text-bold text-gray-500">
-                <AccessTimeIcon /> Prep Time: {meals.prepTimeMinutes} minutes
+                <AccessTimeIcon /> Prep Time: {meal.prepTimeMinutes} minutes
             </p>
         </div>
     )

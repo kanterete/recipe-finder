@@ -2,7 +2,12 @@ import { Button } from "@mui/material"
 import TextField from "@mui/material/TextField"
 import MenuBookIcon from "@mui/icons-material/MenuBook"
 
-const SearchBar = () => {
+type SearchBarProps = {
+    searchTerm: string
+    setSearchTerm: (value: string) => void
+}
+
+const SearchBar = ({ searchTerm, setSearchTerm }: SearchBarProps) => {
     return (
         <div
             id="SearchRecipes"
@@ -16,6 +21,8 @@ const SearchBar = () => {
                 variant="outlined"
                 label="Recipe..."
                 className="w-64"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
             />
             <Button
                 variant="contained"
