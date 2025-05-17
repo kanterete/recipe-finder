@@ -2,7 +2,9 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime"
 import RestaurantIcon from "@mui/icons-material/Restaurant"
 import StarIcon from "@mui/icons-material/Star"
 import SpeedIcon from "@mui/icons-material/Speed"
-import { Meals } from "../types/Meals"
+import { Meals } from "../types/meals"
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder"
+import FavoriteIcon from "@mui/icons-material/Favorite"
 
 type CardProps = {
     meal: Meals
@@ -10,12 +12,18 @@ type CardProps = {
 
 const Card = ({ meal }: CardProps) => {
     return (
-        <div className="flex h-full w-74 flex-col justify-center rounded-2xl text-center md:w-84">
+        <div className="relative flex h-full w-74 flex-col justify-center rounded-2xl text-center md:w-84">
             <img
                 src={meal.image}
                 alt={"chicken salad"}
                 className="rounded-t-xl object-cover"
             />
+            <div className="absolute top-2 right-2 cursor-pointer text-white">
+                <FavoriteBorderIcon fontSize="large" className="shadow-2xs" />
+
+                <FavoriteIcon fontSize="large" />
+            </div>
+
             <h1 className="my-3 text-xl font-bold">{meal.name}</h1>
             <p className="text-gray-500">
                 <SpeedIcon /> Difficulty: {meal.difficulty}

@@ -15,4 +15,5 @@ export interface Meals {
     rating: string
     reviewCount: string
     mealType: string[]
+    favorite: boolean
 }

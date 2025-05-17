@@ -14,7 +14,6 @@ const Hero = () => {
                 startIcon={<SearchIcon />}
                 variant="contained"
                 sx={{ bgcolor: "#f39c12" }}
-                className=""
             >
                 Start Searching
             </Button>

@@ -1,7 +1,7 @@
 import Card from "../components/Card"
 import { fetchRecipes } from "../api/fetchRecipes"
 import { useEffect, useState } from "react"
-import { Meals } from "../types/Meals"
+import { Meals } from "../types/meals"
 
 type CardsProps = {
     searchTerm: string
@@ -11,7 +11,14 @@ const Cards = ({ searchTerm }: CardsProps) => {
     const [recipes, setRecipes] = useState<Meals[]>([])
 
     useEffect(() => {
-        fetchRecipes().then(setRecipes)
+        fetchRecipes().then((data) =>
+            setRecipes(
+                data.map((recipe: Meals) => ({
+                    ...recipe,
+                    favorite: false,
+                })),
+            ),
+        )
     }, [])
 
     const filteredRecipes = recipes.filter((recipe) =>
