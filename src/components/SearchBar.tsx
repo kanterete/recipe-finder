@@ -1,13 +1,15 @@
 import { Button } from "@mui/material"
 import TextField from "@mui/material/TextField"
 import MenuBookIcon from "@mui/icons-material/MenuBook"
+import { useState } from "react"
 
 type SearchBarProps = {
-    searchTerm: string
-    setSearchTerm: (value: string) => void
+    onSearch: (value: string) => void
 }
 
-const SearchBar = ({ searchTerm, setSearchTerm }: SearchBarProps) => {
+const SearchBar = ({ onSearch }: SearchBarProps) => {
+    const [inputValue, setInputValue] = useState("")
+
     return (
         <div
             id="SearchRecipes"
@@ -21,13 +23,14 @@ const SearchBar = ({ searchTerm, setSearchTerm }: SearchBarProps) => {
                 variant="outlined"
                 label="Recipe..."
                 className="w-64"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
             />
             <Button
                 variant="contained"
                 startIcon={<MenuBookIcon />}
                 sx={{ bgcolor: "orange" }}
+                onClick={() => onSearch(inputValue)}
             >
                 Search
             </Button>

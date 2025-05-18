@@ -7,7 +7,7 @@ const SearchRecipe = () => {
 
     return (
         <>
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            <SearchBar onSearch={setSearchTerm} />
             <Cards searchTerm={searchTerm} />
         </>
     )
