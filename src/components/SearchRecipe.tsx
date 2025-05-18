@@ -4,11 +4,18 @@ import SearchBar from "./SearchBar"
 
 const SearchRecipe = () => {
     const [searchTerm, setSearchTerm] = useState("")
+    const [searchFavorite, setSearchFavorite] = useState(false)
 
+    const handleSearchFav = () => {
+        setSearchFavorite((prev) => !prev)
+    }
     return (
         <>
-            <SearchBar onSearch={setSearchTerm} />
-            <Cards searchTerm={searchTerm} />
+            <SearchBar
+                onSearch={setSearchTerm}
+                onToggleFavorite={handleSearchFav}
+            />
+            <Cards searchTerm={searchTerm} searchFavorite={searchFavorite} />
         </>
     )
 }

@@ -3,7 +3,7 @@ import { useState } from "react"
 import CloseIcon from "@mui/icons-material/Close"
 
 const NavBar = () => {
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
 
     const handleNav = () => {
         setIsOpen(!isOpen)
@@ -24,21 +24,19 @@ const NavBar = () => {
                 <li className="cursor-pointer p-4 whitespace-nowrap">
                     <a href="#SearchRecipes">Search Recipes</a>
                 </li>
-                <li className="cursor-pointer p-4">Favorites</li>
-                <li className="cursor-pointer p-4">Contact</li>
             </ul>
 
-            <div onClick={handleNav} className="'block md:hidden">
+            <div onClick={handleNav} className="md:hidden">
                 {!isOpen ? (
-                    <CloseIcon fontSize="large" className="cursor-pointer" />
-                ) : (
                     <MenuOpenIcon fontSize="large" className="cursor-pointer" />
+                ) : (
+                    <CloseIcon fontSize="large" className="cursor-pointer" />
                 )}
             </div>
 
             <div
                 className={
-                    !isOpen
+                    isOpen
                         ? "fixed top-0 left-0 z-10 h-full w-[50%] border-r border-r-gray-900 bg-white p-4 duration-500 ease-in-out md:hidden"
                         : "fixed left-[-100%]"
                 }
@@ -51,15 +49,15 @@ const NavBar = () => {
 
                 <ul className="flex flex-col items-center p-4 text-center text-xl font-medium uppercase">
                     <li className="cursor-pointer border-b border-gray-600 p-4">
-                        Home
+                        <a href="#" onClick={handleNav}>
+                            Home
+                        </a>
                     </li>
                     <li className="cursor-pointer border-b border-gray-600 p-4">
-                        Search Recipes
+                        <a href="#SearchRecipes" onClick={handleNav}>
+                            Search Recipes
+                        </a>
                     </li>
-                    <li className="cursor-pointer border-b border-gray-600 p-4">
-                        Favorites
-                    </li>
-                    <li className="cursor-pointer p-4">Contact</li>
                 </ul>
             </div>
         </nav>

@@ -14,6 +14,7 @@ const Hero = () => {
                 startIcon={<SearchIcon />}
                 variant="contained"
                 sx={{ bgcolor: "#f39c12" }}
+                href="#SearchRecipes"
             >
                 Start Searching
             </Button>

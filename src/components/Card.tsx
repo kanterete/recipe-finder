@@ -8,9 +8,11 @@ import FavoriteIcon from "@mui/icons-material/Favorite"
 
 type CardProps = {
     meal: Meals
+    toggleFavorite: (id: string) => void
+    isFavorite: boolean
 }
 
-const Card = ({ meal }: CardProps) => {
+const Card = ({ meal, toggleFavorite, isFavorite }: CardProps) => {
     return (
         <div className="relative flex h-full w-74 flex-col justify-center rounded-2xl text-center md:w-84">
             <img
@@ -18,10 +20,18 @@ const Card = ({ meal }: CardProps) => {
                 alt={"chicken salad"}
                 className="rounded-t-xl object-cover"
             />
-            <div className="absolute top-2 right-2 cursor-pointer text-white">
-                <FavoriteBorderIcon fontSize="large" className="shadow-2xs" />
-
-                <FavoriteIcon fontSize="large" />
+            <div
+                onClick={() => toggleFavorite(meal.id)}
+                className="absolute top-2 right-2 cursor-pointer text-white"
+            >
+                {!isFavorite ? (
+                    <FavoriteBorderIcon
+                        fontSize="large"
+                        className="shadow-2xs"
+                    />
+                ) : (
+                    <FavoriteIcon fontSize="large" className="shadow-2xs" />
+                )}
             </div>
 
             <h1 className="my-3 text-xl font-bold">{meal.name}</h1>
