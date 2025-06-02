@@ -1,6 +1,6 @@
 import { fetchRecipes } from "../api/fetchRecipes"
 import { useEffect, useState } from "react"
-import { Meals } from "../types/meals"
+import { Meals } from "../types/Meals"
 
 type useFavoritesProps = {
     searchTerm: string

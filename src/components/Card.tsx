@@ -2,9 +2,9 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime"
 import RestaurantIcon from "@mui/icons-material/Restaurant"
 import StarIcon from "@mui/icons-material/Star"
 import SpeedIcon from "@mui/icons-material/Speed"
-import { Meals } from "../types/meals"
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder"
 import FavoriteIcon from "@mui/icons-material/Favorite"
+import { Meals } from "../types/Meals"
 
 type CardProps = {
     meal: Meals
